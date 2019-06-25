@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-export default function() {
+export default function(props) {
   const [show, setShow] = useState(false);
 
   return (
     <>
     <Button variant="primary" onClick={() => setShow(true)}>
-      modal
+      ver detalhes
     </Button>
 
     <Modal show={show} onHide={() => setShow(false)}>
 
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Title>Descrição</Modal.Title>
       </Modal.Header>
 
-      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      <Modal.Body>{props.description}</Modal.Body>
 
       <Modal.Footer>
 
-        <Button variant="secondary" onClick={() => setShow(false)}>
-          Close
-        </Button>
-
         <Button variant="primary" onClick={() => setShow(false)}>
-          Save
+          Ok
         </Button>
         
       </Modal.Footer>

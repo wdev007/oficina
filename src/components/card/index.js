@@ -6,13 +6,16 @@ import Modal from '../modal';
 export default function(props) {
   return (
     <Card key={props.id} className="card">
-      <Card.Header>{props.description}</Card.Header>
+      <Card.Header>Orçamento</Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
+          <Card.Title>Vendedor(a): {props.seller}</Card.Title>
+          <Card.Title>Cliente: {props.customer}</Card.Title>
           <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
+            Valor: {props.value}
           </Card.Text>
-          <Modal />
+          <Modal 
+          description={props.description}
+          />
         </Card.Body>
     </Card>
   );
